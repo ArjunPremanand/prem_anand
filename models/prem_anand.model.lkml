@@ -152,7 +152,7 @@ explore: orders_base_copy {
 }
 
 explore: orders {
-  sql_always_where: ${created_year >= '2017'} ;;
+  sql_always_where: ${created_year} >= '2017' ;;
   join: users {
     type: left_outer
     sql_on: ${orders.user_id} = ${users.id} ;;
