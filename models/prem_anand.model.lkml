@@ -92,6 +92,7 @@ explore: mat_view_base_3890 {}
 explore: looker_scratch__tst_reg_963fdcc02655d76f67 {}
 
 explore: order_items {
+  sql_always_where: ${orders.created_date} >= '2012-02-15' ;;
   join: orders {
     type: left_outer
     sql_on: ${order_items.order_id} = ${orders.id} ;;
@@ -152,7 +153,6 @@ explore: orders_base_copy {
 }
 
 explore: orders {
-  sql_always_where: ${created_year} >= '2011' ;;
   join: users {
     type: left_outer
     sql_on: ${orders.user_id} = ${users.id} ;;
